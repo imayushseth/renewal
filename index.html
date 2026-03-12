@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -213,13 +213,11 @@
 
     <p>
       <strong>Domain:</strong>
-      <a href="https://aashirwadalankar.com/" target="_blank" rel="noopener"
-        >aashirwadalankar.com</a
-      >
+      <a href="" target="_blank" rel="noopener">aashirwadalankar.com</a>
     </p>
 
     <!-- ✅ Added contact info starts here -->
-    <p><strong>Phone:</strong>+91 99397 85898 / +91 94305 75898</p>
+    <p><strong>Phone:</strong>+91</p>
     <p>
       <strong>Shop Address:</strong>
       Aashirwad Shopping Complex, Patsharma Road Bhusra Chowk, Muzaffarpur,
@@ -502,7 +500,7 @@
         const subject = document.getElementById("psubject").value;
         // Encode message
         const message = `Name: ${name}%0APhone: ${phone}%0ASubject: ${encodeURIComponent(
-          subject
+          subject,
         )}%0APlan: Premium Website (₹7,500)`;
         // Open WhatsApp (India number)
         const waUrl = `https://wa.me/918981327228?text=${message}`;
