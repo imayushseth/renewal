@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Website Renewal Needed</title>
+    <title>Website Hosting Renewal Notice</title>
+
     <style>
-      /* --- Layout --- */
       :root {
         --primary: #d9534f;
         --btn: #0275d8;
         --btn-hover: #025aa5;
       }
+
       * {
         box-sizing: border-box;
       }
+
       body {
         font-family: Arial, sans-serif;
         max-width: 920px;
@@ -23,33 +25,25 @@
         border-radius: 8px;
         background: #f9f9f9;
         color: #333;
-        -webkit-font-smoothing: antialiased;
       }
+
       h1 {
         text-align: center;
         color: var(--primary);
-        font-size: 26px;
         margin-bottom: 18px;
       }
+
       p,
       li {
         font-size: 16px;
         line-height: 1.6;
-        color: #333;
       }
-      a {
-        color: #0275d8;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
+
       .highlight {
-        font-weight: 700;
+        font-weight: bold;
         color: var(--primary);
       }
 
-      /* --- Buttons row --- */
       .center-button {
         display: flex;
         gap: 12px;
@@ -57,125 +51,80 @@
         margin: 22px 0;
         flex-wrap: wrap;
       }
-      .center-button button {
+
+      .plan-btn {
         flex: 1 1 220px;
         max-width: 280px;
-        padding: 12px 18px;
-        font-size: 16px;
+        padding: 14px;
         border-radius: 6px;
         border: none;
         cursor: pointer;
-        color: white;
         background: var(--btn);
-        transition: background 0.18s;
+        color: #fff;
+        min-height: 48px;
       }
-      .center-button button:hover {
+
+      .plan-btn:hover {
         background: var(--btn-hover);
       }
 
-      /* --- Popup overlay --- */
-      .popup,
-      .premium-popup {
+      /* POPUP */
+      .popup {
         display: none;
         position: fixed;
         inset: 0;
+        height: calc(var(--vh, 1vh) * 100);
         background: rgba(0, 0, 0, 0.6);
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        padding: 18px;
+        padding: 16px;
       }
-      .popup.show,
-      .premium-popup.show {
+
+      .popup.show {
         display: flex;
       }
 
-      /* --- Popup content (responsive) --- */
       .popup-content {
-        width: min(96%, 520px);
-        max-width: 520px;
+        width: min(95%, 420px);
         background: #fff;
         border-radius: 10px;
-        padding: 20px 20px 24px;
+        padding: 20px;
         position: relative;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
-        /* keep popup scrollable on small heights (keyboard) */
-        max-height: calc(100vh - 60px);
+        max-height: 90vh;
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
       }
 
-      /* close X */
       .popup-close {
         position: absolute;
         top: 10px;
         right: 10px;
-        background: transparent;
+        font-size: 22px;
         border: none;
-        font-size: 24px;
-        line-height: 1;
+        background: none;
         cursor: pointer;
-        color: #666;
-        padding: 6px;
-      }
-      .popup-close:focus {
-        outline: 2px solid #ddd;
       }
 
-      .popup-content h2 {
-        margin-top: 0;
-        color: var(--primary);
-        font-size: 20px;
-      }
-
-      /* QR & form */
       .qr-section {
         text-align: center;
-        margin: 14px 0;
       }
+
       .qr-section img {
-        display: block;
-        margin: 0 auto;
-        width: 70%;
-        max-width: 260px;
-        height: auto; /* keep aspect ratio */
-      }
-      form .row {
-        margin: 8px 0;
-      }
-      input[type="text"],
-      input[type="tel"],
-      input[type="date"],
-      input[type="number"],
-      button[type="submit"] {
-        width: 100%;
-        padding: 11px 12px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 15px;
-      }
-      input:focus,
-      button:focus {
-        outline: 2px solid rgba(2, 117, 216, 0.16);
+        width: 80%;
+        max-width: 240px;
       }
 
-      button[type="submit"] {
-        margin-top: 10px;
-        background: var(--primary);
-        color: #fff;
-        border: none;
-        cursor: pointer;
-      }
-      button[type="submit"]:hover {
-        background: #c9302c;
-      }
+      /* MOBILE */
+      @media (max-width: 480px) {
+        .popup {
+          align-items: flex-end;
+        }
 
-      .success-message {
-        display: none;
-        text-align: center;
-        color: green;
-        margin-top: 12px;
-        font-weight: 600;
+        .popup-content {
+          width: 100%;
+          border-radius: 14px 14px 0 0;
+          padding: 16px;
+        }
       }
 
       .note {
@@ -183,344 +132,186 @@
         color: #777;
         margin-top: 14px;
       }
+
       .footer {
         text-align: center;
         font-size: 12px;
         color: #aaa;
         margin-top: 30px;
       }
-
-      /* --- Small screens adjustments --- */
-      @media (max-width: 420px) {
-        h1 {
-          font-size: 20px;
-        }
-        .popup-content {
-          padding: 14px;
-          border-radius: 8px;
-        }
-        .popup-close {
-          top: 8px;
-          right: 8px;
-          font-size: 20px;
-        }
-      }
     </style>
   </head>
 
   <body>
-    <h1>Website Hosting Renewal Needed</h1>
+    <h1>Website Hosting Renewal Notice</h1>
+
+    <p><strong>Reference Number:</strong> 018-47392-615204</p>
+    <p><strong>IP ID:</strong> 58392</p>
+    <p><strong>Date of Notice:</strong> 27 March 2026</p>
+
+    <hr />
 
     <p>
-      <strong>Domain:</strong>
-      <a href="" target="_blank" rel="noopener">aashirwadalankar.com</a>
+      <strong>Website:</strong>
+      <a href="https://jagatnarayanjewellers.com/" target="_blank">
+        jagatnarayanjewellers.com
+      </a>
     </p>
 
-    <!-- ✅ Added contact info starts here -->
-    <p><strong>Phone:</strong>+91</p>
     <p>
-      <strong>Shop Address:</strong>
-      Aashirwad Shopping Complex, Patsharma Road Bhusra Chowk, Muzaffarpur,
-      Bihar 841 303
+      <strong>Contact Numbers:</strong><br />
+      +91 99831 14132 / +91 91669 79422
     </p>
-    <!-- ✅ Added contact info ends here -->
+
+    <p><strong>Email:</strong> jagatnarayanjewellers2001@gmail.com</p>
 
     <p>
-      <strong>Status:</strong> Hosting expired. Renewal required to restore
-      website access across all Google platform.
+      <strong>Registered Address:</strong><br />
+      Shop No. 41, Ghee Walon Ka Rasta,<br />
+      Johari Bazar, Jaipur – 302003, India
     </p>
-    <p><strong>Renewal Period:</strong> 12 Months</p>
+
+    <hr />
 
     <p class="highlight">
-      Expiry Date: <span id="expiry-date"></span><br />
-      Last Date to Renew: <span id="last-date"></span>
+      Status: Website hosting has expired as of 27 March 2026.
     </p>
 
-    <p class="highlight">
-      Website renewal is required to reactivate and resume normal operation on
-      Google.
+    <p>
+      Immediate renewal is required to restore and maintain uninterrupted
+      website accessibility across all platforms including Google search
+      indexing systems.
     </p>
 
-    <p>You now have <strong>two options</strong>:</p>
+    <p class="highlight">Recommended Date for Renewal: 2 April 2026</p>
+
+    <p>
+      For uninterrupted and seamless continuity across search engines, it is
+      strongly advised to complete the renewal on or before the above-mentioned
+      date.
+    </p>
+
+    <p>
+      The website is currently indexed and actively maintained across major
+      search engines. Any delay in renewal may result in disruption of indexing,
+      reduced crawl frequency, and weakening of SEO performance.
+    </p>
+
     <ul>
-      <li><strong>Renew Hosting:</strong> ₹3,999 (1 Year Hosting only)</li>
+      <li><strong>From 8 April 2026:</strong> Ranking decline may begin</li>
       <li>
-        <strong>Upgrade to Premium Jewellery Website:</strong> ₹7,500 (Includes
-        Hosting + New Luxury Design + Extra Features)
+        <strong>From 27 April 2026:</strong> Website will be permanently deleted
+        and non-recoverable
       </li>
     </ul>
 
+    <p class="highlight">
+      Timely renewal is critical to maintain rankings, traffic, and digital
+      presence.
+    </p>
+
+    <p>
+      The following charges are applicable strictly for
+      <strong>website hosting services only</strong>.
+    </p>
+
+    <p><strong>Available Hosting Plans:</strong></p>
+
+    <ul>
+      <li><strong>₹2,499</strong> – 1 Year Website Hosting</li>
+      <li><strong>₹3,999</strong> – 2 Years Website Hosting</li>
+      <li><strong>₹4,499</strong> – 3 Years Website Hosting</li>
+    </ul>
+
     <div class="center-button">
-      <button id="open-renew" data-target="popup">Renew for ₹3,999</button>
-      <button id="open-premium" data-target="premium-popup">
-        Upgrade to Premium for ₹7,500
+      <button class="plan-btn" data-plan="1 Year" data-amount="2499">
+        1 Year - ₹2,499
+      </button>
+      <button class="plan-btn" data-plan="2 Years" data-amount="3999">
+        2 Years - ₹3,999
+      </button>
+      <button class="plan-btn" data-plan="3 Years" data-amount="4499">
+        3 Years - ₹4,499
       </button>
     </div>
 
     <p>
-      Once payment or upgrade request is completed, your website will be renewed
-      within <strong>3–4 days</strong>.
+      Upon successful payment confirmation, hosting services will be renewed
+      within <strong>24–48 hours</strong>.
     </p>
 
     <p class="note">
-      Note: This is a standard renewal process applicable to all hosting
-      services. Hosting expiration occurs automatically after the plan term ends
-      if not renewed.
+      Note: Hosting services operate on a prepaid renewal cycle. Failure to
+      renew within the specified timeframe may lead to service suspension and
+      permanent data loss.
     </p>
 
     <div class="footer">
-      This is a system-generated notice regarding hosting service renewal.<br />©
-      2025 Website Services
+      This is a system-generated notice regarding hosting service renewal.<br />
+      © 2026 Web Services Department
     </div>
 
-    <!-- RENEWAL POPUP (PAYMENT) -->
-    <div
-      class="popup"
-      id="popup"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="renewTitle"
-    >
-      <div class="popup-content" role="document">
-        <button class="popup-close" aria-label="Close popup" data-close>
-          &times;
-        </button>
-        <h2 id="renewTitle">Renew Hosting - ₹3,999</h2>
+    <!-- POPUP -->
+    <div class="popup" id="plan-popup">
+      <div class="popup-content">
+        <button class="popup-close" id="close-popup">&times;</button>
 
-        <div class="qr-section" aria-hidden="false">
-          <p><strong>Scan QR to Pay:</strong></p>
-          <img src="upi.jpg" alt="UPI QR Code for renewal payment" />
-          <p><strong>Amount:</strong> ₹3,999.00</p>
+        <h2 style="text-align: center">Complete Payment</h2>
+
+        <div class="qr-section">
+          <p><strong>Scan UPI QR Code to Pay</strong></p>
+
+          <img src="upi.jpg" alt="UPI QR Code" />
+
+          <p id="popup-plan"></p>
+          <p><strong>Amount:</strong> ₹<span id="popup-amount"></span></p>
         </div>
 
-        <form
-          id="renew-form"
-          name="payment-done"
-          method="POST"
-          data-netlify="true"
-          action="/thank-you.html"
-          netlify
-        >
-          <div class="row">
-            <input type="text" name="name" placeholder="Your Name" required />
-          </div>
-          <div class="row">
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              required
-              pattern="[0-9+ ]{7,15}"
-            />
-          </div>
-          <div class="row">
-            <input
-              type="text"
-              name="transactionId"
-              placeholder="Transaction ID"
-              required
-            />
-          </div>
-          <div class="row"><input type="date" name="date" required /></div>
-          <div class="row">
-            <input
-              type="number"
-              name="amount"
-              placeholder="Transaction Amount (e.g. 3999)"
-              required
-            />
-          </div>
-          <div class="row"><button type="submit">Submit</button></div>
-        </form>
-
-        <div class="success-message" id="renew-success">
-          ✅ Thank you! Your payment details have been submitted.<br />Your
-          website will be live in 3–4 days post payment confirmation.
-        </div>
-      </div>
-    </div>
-
-    <!-- PREMIUM POPUP (WHATSAPP REDIRECT) -->
-    <div
-      class="premium-popup"
-      id="premium-popup"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="premiumTitle"
-    >
-      <div class="popup-content" role="document">
-        <button class="popup-close" aria-label="Close popup" data-close>
-          &times;
-        </button>
-        <h2 id="premiumTitle">Upgrade to Premium Jewellery Website - ₹7,500</h2>
-
-        <form id="premium-form" onsubmit="sendToWhatsApp(event)">
-          <div class="row">
-            <input type="text" id="pname" placeholder="Your Name" required />
-          </div>
-          <div class="row">
-            <input
-              type="tel"
-              id="pphone"
-              placeholder="Phone Number"
-              required
-              pattern="[0-9+ ]{7,15}"
-            />
-          </div>
-          <input
-            type="hidden"
-            id="psubject"
-            value="Update to Premium Jewellery Website"
-          />
-          <div class="row"><button type="submit">Proceed</button></div>
-        </form>
+        <p style="text-align: center; font-size: 14px">
+          After completing payment, please share transaction details for
+          confirmation.
+        </p>
       </div>
     </div>
 
     <script>
-      // ====== Date setup (expiry + last date) ======
-      const today = new Date();
-      const expiry = today.toLocaleDateString("en-IN");
-      const lastDateObj = new Date(today);
-      lastDateObj.setDate(today.getDate() + 10);
-      const lastDate = lastDateObj.toLocaleDateString("en-IN");
-      document.getElementById("expiry-date").textContent = expiry;
-      document.getElementById("last-date").textContent = lastDate;
-
-      // ====== Modal utilities ======
-      let lastFocusedElement = null;
-      const focusablesSelector =
-        'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-      function openModal(modal) {
-        lastFocusedElement = document.activeElement;
-        modal.classList.add("show");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden"; // lock background scroll
-
-        // focus first focusable element
-        const focusables = modal.querySelectorAll(focusablesSelector);
-        if (focusables.length) {
-          focusables[0].focus();
-        }
-
-        // add keydown trap (Tab, Esc)
-        modal.__keydownHandler = function (e) {
-          if (e.key === "Escape") {
-            closeModal(modal);
-            return;
-          }
-          if (e.key === "Tab") {
-            const all = Array.from(modal.querySelectorAll(focusablesSelector));
-            if (!all.length) return;
-            const first = all[0];
-            const last = all[all.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-              e.preventDefault();
-              last.focus();
-              return;
-            }
-            if (!e.shiftKey && document.activeElement === last) {
-              e.preventDefault();
-              first.focus();
-              return;
-            }
-          }
-        };
-        document.addEventListener("keydown", modal.__keydownHandler);
+      // MOBILE HEIGHT FIX
+      function setVH() {
+        document.documentElement.style.setProperty(
+          "--vh",
+          `${window.innerHeight * 0.01}px`,
+        );
       }
+      setVH();
+      window.addEventListener("resize", setVH);
 
-      function closeModal(modal) {
-        modal.classList.remove("show");
-        modal.setAttribute("aria-hidden", "true");
+      // POPUP LOGIC
+      const buttons = document.querySelectorAll(".plan-btn");
+      const popup = document.getElementById("plan-popup");
+      const closeBtn = document.getElementById("close-popup");
+      const popupPlan = document.getElementById("popup-plan");
+      const popupAmount = document.getElementById("popup-amount");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          popupPlan.innerHTML = `<strong>Selected Plan:</strong> ${btn.dataset.plan} Hosting`;
+          popupAmount.textContent = btn.dataset.amount;
+
+          popup.classList.add("show");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      function closePopup() {
+        popup.classList.remove("show");
         document.body.style.overflow = "";
-        // remove key handler
-        if (modal.__keydownHandler) {
-          document.removeEventListener("keydown", modal.__keydownHandler);
-          delete modal.__keydownHandler;
-        }
-        // restore focus
-        if (
-          lastFocusedElement &&
-          typeof lastFocusedElement.focus === "function"
-        ) {
-          lastFocusedElement.focus();
-        }
       }
 
-      // open via buttons
-      document.querySelectorAll("[data-target]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-target");
-          const modal = document.getElementById(id);
-          if (modal) openModal(modal);
-        });
+      closeBtn.addEventListener("click", closePopup);
+
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) closePopup();
       });
-
-      // close buttons and click-outside
-      document.querySelectorAll("[data-close]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const modal = btn.closest(".popup, .premium-popup");
-          if (modal) closeModal(modal);
-        });
-      });
-      // click outside to close
-      document.querySelectorAll(".popup, .premium-popup").forEach((o) => {
-        o.addEventListener("click", (e) => {
-          if (e.target === o) closeModal(o);
-        });
-      });
-
-      // ====== Renew form submit handling (show success + auto close) ======
-      function showSuccess(event) {
-        event.preventDefault();
-        const form = document.getElementById("renew-form");
-        const success = document.getElementById("renew-success");
-        form.style.display = "none";
-        success.style.display = "block";
-
-        // optionally: you may want to actually send data to Netlify; the `data-netlify="true"` attribute will handle if deployed
-        setTimeout(() => {
-          const modal = document.getElementById("popup");
-          closeModal(modal);
-          // reset UI
-          form.reset();
-          form.style.display = "";
-          success.style.display = "none";
-        }, 4500);
-      }
-
-      // ====== Premium form -> WhatsApp ======
-      function sendToWhatsApp(event) {
-        event.preventDefault();
-        const name = document.getElementById("pname").value.trim();
-        const phone = document.getElementById("pphone").value.trim();
-        const subject = document.getElementById("psubject").value;
-        // Encode message
-        const message = `Name: ${name}%0APhone: ${phone}%0ASubject: ${encodeURIComponent(
-          subject,
-        )}%0APlan: Premium Website (₹7,500)`;
-        // Open WhatsApp (India number)
-        const waUrl = `https://wa.me/918981327228?text=${message}`;
-        // Close modal then open whatsapp in a new tab
-        const modal = document.getElementById("premium-popup");
-        closeModal(modal);
-        window.open(waUrl, "_blank");
-      }
-
-      // Attach global handlers (progressive enhancement)
-      window.showSuccess = showSuccess;
-      window.sendToWhatsApp = sendToWhatsApp;
-
-      // Ensure forms do not cause unexpected navigation on older browsers
-      document
-        .getElementById("renew-form")
-        .addEventListener("submit", showSuccess);
-      document
-        .getElementById("premium-form")
-        .addEventListener("submit", sendToWhatsApp);
     </script>
   </body>
 </html>
